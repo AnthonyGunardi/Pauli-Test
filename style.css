@@ -1,0 +1,315 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Exo", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: #424642;
+}
+
+#container {
+  height: auto;
+  width: auto;
+  padding: 6px;
+}
+
+#mulai {
+  height: 70px;
+  width: 250px;
+  text-align: center;
+  padding: 20px 0;
+  background: #c06014;
+  color: #f3f4ed;
+  font-size: 23px;
+  font-weight: 700;
+  border-radius: 10px;
+  border: 1px solid #c06014;
+  cursor: pointer;
+  /* display: none; */
+}
+
+#mulai:hover {
+  box-shadow: inset 3px 3px 5px rgba(255, 255, 255, 0.5),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* aturan */
+#aturan {
+  height: auto;
+  width: 650px;
+  padding: 40px;
+  background: #536162;
+  border-radius: 20px;
+  box-shadow: inset 2px 2px 3px rgb(255 255 255 / 15%),
+    inset -2px -2px 3px rgb(0 0 0);
+  /* display: none; */
+}
+#tes {
+  height: auto;
+  width: 650px;
+  padding: 40px;
+  background: #536162;
+  border-radius: 20px;
+  box-shadow: inset 2px 2px 3px rgb(255 255 255 / 15%),
+    inset -2px -2px 3px rgb(0 0 0);
+  display: none;
+}
+
+#aturan h2 {
+  font-size: 40px;
+  text-align: center;
+  color: #f3f4ed;
+  margin: 0 0 10px 0;
+}
+
+#aturan h4 {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  color: #f3f4ed;
+}
+
+#aturan #tombol {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+#aturan #tombol button {
+  height: 50px;
+  width: 120px;
+  margin: 10px 25px;
+  border: none;
+  outline: none;
+  color: #f3f4ed;
+  background: #c06014;
+  border: 1px solid #c06014;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#aturan #tombol button:last-child {
+  margin: 10px 0;
+}
+
+#aturan #tombol button:hover {
+  box-shadow: inset 3px 3px 5px rgba(255, 255, 255, 0.5),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#tes {
+  /* display: block; */
+  height: 480px;
+  position: relative;
+}
+
+#tes #tes_header {
+  height: 60px;
+  width: 100%;
+  background: #424642;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: inset 2px 2px 3px rgb(255 255 255 / 15%),
+    inset -2px -2px 3px rgb(0 0 0);
+}
+
+#tes #tes_header h5 {
+  font-size: 28px;
+  margin: 0 20px;
+  color: #f3f4ed;
+}
+
+#tes #tes_header #timer {
+  height: 50px;
+  width: 225px;
+  background: #c06014;
+  color: #e7f1fa;
+  border: 1px solid #c06014;
+  font-size: 18px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 10px;
+}
+
+#tes #tes_header #timer h6 {
+  font-size: 22px;
+  display: grid;
+  place-items: center;
+  color: #f3f4ed;
+  margin: 0 10px;
+}
+
+#tes #tes_header #timer #waktu {
+  height: 44px;
+  width: 50px;
+  background: #536162;
+  color: #f3f4ed;
+  /* border: 1px solid #b0c4d8; */
+  border-radius: 10px;
+  margin: 2px 0 0 27px;
+}
+
+/* soal */
+#tes #soal {
+  width: 88%;
+  position: absolute;
+  top: 70px;
+}
+
+#tes #soal h2 {
+  font-size: 32px;
+  text-align: center;
+  color: #f3f4ed;
+}
+
+/* opsi */
+#tes #opsiPilihan {
+  height: 60%;
+  width: 50%;
+  position: absolute;
+  top: 120px;
+  left: 25%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: auto auto auto;
+}
+
+#tes #opsiPilihan .space {
+  opacity: 0;
+}
+
+#tes #opsiPilihan h4 {
+  height: 60px;
+  width: 100px;
+  background: #c06014;
+  line-height: 50px;
+  margin: 5px 0;
+  border-radius: 7px;
+  padding: 7px 0px;
+  font-size: 20px;
+  color: #f3f4ed;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+}
+
+#tes #opsiPilihan h4:hover {
+  background: #424642;
+  color: #f3f4ed;
+}
+
+#tes #opsiPilihan .disabled {
+  pointer-events: none;
+}
+
+/* jawaban */
+#tes #jawaban {
+  height: 60px;
+  width: 100%;
+  background: #424642;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: inset 2px 2px 3px rgb(255 255 255 / 15%),
+    inset -2px -2px 3px rgb(0 0 0);
+}
+
+#tes #jawaban h3 {
+  margin: 0px 270px;
+  color: #f3f4ed;
+}
+
+#tes #jawaban h3:hover {
+  box-shadow: inset 3px 3px 5px rgba(255, 255, 255, 0.5),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#tes #jawaban h3:first-child:hover {
+  box-shadow: none;
+}
+
+/* hasil */
+#container #hasil {
+  height: 500px;
+  width: 450px;
+  padding: 20px;
+  background: #424642;
+  border-radius: 20px;
+  /* border: 1px solid #c06014; */
+  overflow: hidden;
+  position: relative;
+  display: none;
+  box-shadow: inset 2px 2px 3px rgb(255 255 255 / 15%),
+    inset -2px -2px 3px rgb(0 0 0);
+}
+
+/* #container #hasil i {
+  font-size: 180px;
+  color: #c06014;
+  position: absolute;
+  top: 30px;
+  left: 120px;
+} */
+
+#container #hasil h6 {
+  height: 40px;
+  width: 87%;
+  font-size: 27px;
+  position: absolute;
+  text-align: center;
+  top: 140px;
+  color: #f3f4ed;
+}
+
+#container #hasil #totalPoin {
+  font-size: 27px;
+  top: 180px;
+}
+
+#container #hasil button {
+  height: 60px;
+  width: 260px;
+  border: none;
+  outline: none;
+  background: #c06014;
+  color: #f3f4ed;
+  position: absolute;
+  left: 105px;
+  top: 260px;
+  border: 1px solid #c06014;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#container #hasil button:last-child {
+  top: 330px;
+}
+
+#container #hasil button:hover {
+  box-shadow: inset 3px 3px 5px rgba(255, 255, 255, 0.5),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}

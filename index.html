@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+     <meta charset="UTF-8">
+     <title>Tes Pauli</title>
+     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=Exo:ital,wght@1,600&display=swap" rel="stylesheet">
+     <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> -->
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div id="container">
+            <!-- <div id="mulai">Mulai Tes</div> -->
+            
+            <!-- Aturan tes -->
+            <div id="aturan">
+                <h2>Tes Pauli</h2>
+                <h4>1. Anda hanya punya 60 detik untuk menjawab tes.</h4>
+                <h4>2. Anda tidak dapat mengganti jawaban yang sudah Anda jawab.</h4>
+                <h4>3. Jika jawaban Anda benar, Anda akan mendapatkan 1 poin.</h4>
+                <h4>4. Anda tidak bisa keluar ketika tes dimulai.</h4>
+                <div id="tombol">
+                    <button id="keluar">Keluar</button>
+                    <button id="lanjut">Lanjut</button>
+                </div>
+            </div>
+
+            <!-- Tes -->
+            <div id="tes">
+                <div id="tes_header">
+                    <h5>Tes Pauli</h5>
+                    <div id="timer">
+                        <h6>Sisa Waktu</h6>
+                        <h6 id="waktu">30</h6>
+                    </div>
+                </div>
+    
+                <!-- Soal -->
+                <div id="soal">
+                    <h2 id="teksSoal"></h2>
+                </div>
+    
+                <!-- Pilihan Jawaban -->
+                <div id="opsiPilihan">
+                    <h4 class="antrianJawaban" id="opsi1"></h4>
+                    <h4 class="antrianJawaban" id="opsi2"></h4>
+                    <h4 class="antrianJawaban" id="opsi3"></h4>
+                    <h4 class="antrianJawaban" id="opsi4"></h4>
+                    <h4 class="antrianJawaban" id="opsi5"></h4>
+                    <h4 class="antrianJawaban" id="opsi6"></h4>
+                    <h4 class="antrianJawaban" id="opsi7"></h4>
+                    <h4 class="antrianJawaban" id="opsi8"></h4>
+                    <h4 class="antrianJawaban" id="opsi9"></h4>
+                    <h4 class="space"></h4>
+                    <h4 class="antrianJawaban" id="opsi10"></h4>
+                    <h4 class="space"></h4>
+                </div>
+                <div id="jawaban">
+                    <h3 id="poinSementara"></h3>
+                </div>
+            </div>
+
+            <!-- Hasil -->
+            <div id="hasil">
+                <!-- <i class="fas fa-star"></i> -->
+                <h6 id="tesSelesai">Tes telah selesai.</h6>
+                <h6 id="totalPoin"></h6>
+                <button id="keluarTes">Keluar Tes</button>
+                <button id="ulangTes">Ulang Tes</button>
+            </div>
+        </div>
+        <script src="questions.js"></script>
+        <script src="script.js"></script>
+</body>
+</html>
