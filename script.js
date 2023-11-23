@@ -22,8 +22,23 @@ let totalPoin = document.querySelector("#totalPoin");
 let keluarTes = document.querySelector("#keluarTes");
 let ulangTes = document.querySelector("#ulangTes");
 let antrianJawaban = document.querySelectorAll(".antrianJawaban");
-
-let index = 0;
+// deklarasi variabel-variabel berkaitan dengan soal
+let angkaRandom1 = Math.floor(Math.random() * 10);
+let angkaRandom2 = Math.floor(Math.random() * 10);
+let Tes = {
+    soal: angkaRandom1 + " + " + angkaRandom2 + " = ?",
+    opsi1: 1,
+    opsi2: 2,
+    opsi3: 3,
+    opsi4: 4,
+    opsi5: 5,
+    opsi6: 6,
+    opsi7: 7,
+    opsi8: 8,
+    opsi9: 9,
+    opsi10: 0,
+    jawaban: ((angkaRandom1 + angkaRandom2) % 10)
+};
 let timer = 60;
 let interval = 0;
 let jumlahPoin = 0;
@@ -70,17 +85,17 @@ let hitungMundur = () => {
 
 //setInterval(hitungMundur,1000);
 let loadData = () => {
-    teksSoal.innerText = Tes[index].soal;
-    opsi1.innerText = Tes[index].opsi1;
-    opsi2.innerText = Tes[index].opsi2;
-    opsi3.innerText = Tes[index].opsi3;
-    opsi4.innerText = Tes[index].opsi4;
-    opsi5.innerText = Tes[index].opsi5;
-    opsi6.innerText = Tes[index].opsi6;
-    opsi7.innerText = Tes[index].opsi7;
-    opsi8.innerText = Tes[index].opsi8;
-    opsi9.innerText = Tes[index].opsi9;
-    opsi10.innerText = Tes[index].opsi10;
+    teksSoal.innerText = Tes.soal;
+    opsi1.innerText = Tes.opsi1;
+    opsi2.innerText = Tes.opsi2;
+    opsi3.innerText = Tes.opsi3;
+    opsi4.innerText = Tes.opsi4;
+    opsi5.innerText = Tes.opsi5;
+    opsi6.innerText = Tes.opsi6;
+    opsi7.innerText = Tes.opsi7;
+    opsi8.innerText = Tes.opsi8;
+    opsi9.innerText = Tes.opsi9;
+    opsi10.innerText = Tes.opsi10;
 }
 
 // tombol lanjut diklik
@@ -139,7 +154,7 @@ antrianJawaban.forEach((jawaban, nomorJawaban) => {
                 break;
         }
         
-        if (nomorJawaban === Tes[index].jawaban) {
+        if (nomorJawaban === Tes.jawaban) {
             jumlahPoin = jumlahPoin + 1;
             jumlahJawaban = jumlahJawaban + 1;
             nomorJawaban = nomorJawaban - 1;
@@ -156,19 +171,15 @@ antrianJawaban.forEach((jawaban, nomorJawaban) => {
 });
 
 let next_question = () => {
-    //    if index is less then Tes.length
-    if (index !== Tes.length - 1) {
-        index++;
-        loadData();
-        poinSementara.innerHTML = `Poin : ${jumlahPoin}`;
-        interval = setInterval(hitungMundur, 1000);
-    } else {
-        index = 0;
-        clearInterval(interval);
-        tes.style.display = "none";
-        totalPoin.innerHTML = `Total poin Anda adalah ${jumlahPoin}`;
-        hasil.style.display = "block";
-    }
+    angkaRandom1 = angkaRandom2;
+    angkaRandom2 = Math.floor(Math.random() * 10);
+    Tes.soal = angkaRandom1 + " + " + angkaRandom2 + " = ?";
+    Tes.jawaban = ((angkaRandom1 + angkaRandom2) % 10)
+    console.log('angka1 = ' + angkaRandom1 + ', angka2 = ' + angkaRandom2 + ', soal = ' + Tes.soal)
+    loadData();
+    poinSementara.innerHTML = `Poin : ${jumlahPoin}`;
+    interval = setInterval(hitungMundur, 1000);
+
     for (i = 0; i <= 9; i++) {
         antrianJawaban[i].classList.remove("disabled");
     }
